@@ -1,4 +1,21 @@
 # CSSE4011-FinalProject Vulcan_Scarlet
+
+# Team Members
+
+## Member DINGYI ZHANG
+
+- **Student ID**: `45593156`
+- **Responsibilities**:
+  - Handles Bluetooth communication between NRF52840 and M5Stack Core2.
+  - Develops the infrared encoding on the NRF52840 module.
+
+## Member XIAOWEI ZHANG
+
+- **Student ID**: `46169558`
+- **Responsibilities**:
+  - Conducts posture analysis using M5Core2 to generate control commands.
+  - Designs and implements the UI interface on M5Core2's display for controlling various devices.
+
 **Final Projct for CSSE4011 in UQ 2024 Semester 1**<br>
 This project encompasses the development of a motion-sensing universal remote controller based on the M5 Core2 board, augmented with an infrared (IR) receiver/transmitter module. This versatile controller is designed to command any type of appliance that receives standard IR signals.
 
