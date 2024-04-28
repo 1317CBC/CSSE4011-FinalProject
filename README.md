@@ -1,6 +1,22 @@
 # CSSE4011-FinalProject
 Final Projct for CSSR4011 in UQ 2024
 
+# Key Performance Indicator
+## 1. Gesture Input Recognition via Accelerometer:
+The M5core2's onboard accelerometer is to be calibrated and programmed to detect specific motion gestures. These gestures will serve as inputs to control various functions of infrared devices. Detailed metrics will be established to measure the accuracy and responsiveness of gesture recognition.
+
+## 2. Bluetooth Communication Efficiency:
+Establish a robust Bluetooth communication protocol between the M5core2 and NRF_52840DK boards. The performance will be measured based on connection stability, data transmission speed, and error rate. A seamless transmission of commands with minimal latency is critical for a positive user experience.
+
+## 3. User Interface (UI) Development on M5core2:
+Design an intuitive UI to be displayed on the M5core2 screen, which will show real-time gesture recognition feedback and command statuses. Effectiveness will be judged based on the UI's ease of use, clarity, and the user's ability to navigate and execute control functions without confusion or delay.
+
+## 4. IR Signal Encoding Accuracy:
+Program the NRF52840DK to accurately encode Bluetooth-received commands into IR signals compatible with a wide range of devices. KPIs will measure the encoding success rate, signal strength, range, and compatibility with various consumer electronics.
+
+## 5. Versatility and Control of Multiple Devices:
+The universal remote should be tested across multiple devices to confirm its ability to control at least two distinct devices from different manufacturers. The criteria for this KPI include the number of devices successfully controlled, the range of commands executed, and the user feedback on the efficacy and utility of the remote in real-world scenarios.
+
 # Flow Chart
 
 ## 1. M5 Core2 Flowchart
