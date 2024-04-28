@@ -5,6 +5,7 @@ Final Projct for CSSR4011 in UQ 2024
 
 ## 1. M5 Core2 Flowchart
     ![View M5 Core2 Flowchart](/flowchart/M5Core2.png "M5")
+    ![View M5 Core2 Flowchart](/flowchart/M5Core2.png)
 
 ## 2. nrf52840dk_nrf52840 flowchart
     [View nrf52840dk_nrf52840 Flowchart](/flowchart/nrf52840dk.png)
