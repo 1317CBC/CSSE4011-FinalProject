@@ -20,10 +20,10 @@ The universal remote should be tested across multiple devices to confirm its abi
 # Flow Chart
 
 ## 1. M5 Core2 Flowchart
-![M5 Core2 Flowchart](flowchart/M5core2.png)
+![M5 Core2 Flowchart](flowchart/M5core2.png "M5 Core2 Flowchart")
 
 ## 2. nrf52840dk_nrf52840 flowchart
-![View nrf52840dk_nrf52840 Flowchart](/flowchart/nrf52840dk.png)
+![View nrf52840dk_nrf52840 Flowchart](/flowchart/nrf52840dk.png "nrf52840dk Flowchart")
 
 
 # DIKW Pyramid Analysis of m5stack core2 and NRF 52840DK Universal Remote Control System
