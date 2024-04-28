@@ -1,6 +1,14 @@
 # CSSE4011-FinalProject
 Final Projct for CSSR4011 in UQ 2024
 
+# Flow Chart
+
+## 1. M5 Core2 Flowchart
+    (./flowchart/M5Core2.pdf)
+
+## 2. nrf52840dk_nrf52840 flowchart
+    (./flowchart/nrf52840dk.pdf)
+
 
 # DIKW Pyramid Analysis of m5stack core2 and NRF 52840DK Universal Remote Control System
 
