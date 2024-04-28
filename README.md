@@ -1,5 +1,5 @@
 # CSSE4011-FinalProject
-**Final Projct for CSSE4011 in UQ 2024 Semester 1**
+**Final Projct for CSSE4011 in UQ 2024 Semester 1**<br>
 This project encompasses the development of a motion-sensing universal remote controller based on the M5 Core2 board, augmented with an infrared (IR) receiver/transmitter module. This versatile controller is designed to command any type of appliance that receives standard IR signals.
 
 Key to this system is the M5Core2 controller, which serves as the user interface and command centre. The M5Core2, running the Zephyr Real-Time Operating System (RTOS), captures the user's hand gestures to determine intent. These gestures are precisely interpreted through the onboard accelerometer and gyroscope sensors. To complement gesture control, a touch-enabled UI is generated on the M5Core2's display. This interactive interface allows users to seamlessly select the device they intend to control.
