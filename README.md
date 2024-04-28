@@ -2,6 +2,8 @@
 Final Projct for CSSR4011 in UQ 2024
 
 # Key Performance Indicator
+> To meet the highest standard for Key Performance Indicators as per the given criteria, detailed KPIs for the project based on the NRF_52840DK and M5core2 development boards to develop a motion-sensing universal remote control using IR to control various infrared devices would be:
+
 ## 1. Gesture Input Recognition via Accelerometer:
 The M5core2's onboard accelerometer is to be calibrated and programmed to detect specific motion gestures. These gestures will serve as inputs to control various functions of infrared devices. Detailed metrics will be established to measure the accuracy and responsiveness of gesture recognition.
 
