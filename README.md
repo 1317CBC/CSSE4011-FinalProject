@@ -1,8 +1,15 @@
 # CSSE4011-FinalProject
-Final Projct for CSSR4011 in UQ 2024
+**Final Projct for CSSE4011 in UQ 2024 Semester 1**
+This project encompasses the development of a motion-sensing universal remote controller based on the M5 Core2 board, augmented with an infrared (IR) receiver/transmitter module. This versatile controller is designed to command any type of appliance that receives standard IR signals.
+
+Key to this system is the M5Core2 controller, which serves as the user interface and command centre. The M5Core2, running the Zephyr Real-Time Operating System (RTOS), captures the user's hand gestures to determine intent. These gestures are precisely interpreted through the onboard accelerometer and gyroscope sensors. To complement gesture control, a touch-enabled UI is generated on the M5Core2's display. This interactive interface allows users to seamlessly select the device they intend to control.
+
+For the transmission of commands from the M5Core2 to the NRF_52840DK, Bluetooth Low Energy (BLE) is employed, utilizing iBeacon technology for broadcasting 'advertisements'. This method ensures an efficient transfer of control signals without the need for establishing a continuous connection, thereby reducing power consumption and increasing the responsiveness of the system.
+
+Upon receiving the data, the NRF_52840DK is responsible for encoding these signals into the appropriate IR format. This encoding process allows for the remote controller to interface with a diverse array of appliances, from televisions and air conditioners to various multimedia systems. The system is designed to demonstrate control of at least two different appliances, showcasing its capability as a truly universal remote control solution.
 
 # Key Performance Indicator
-> To meet the highest standard for Key Performance Indicators as per the given criteria, detailed KPIs for the project based on the NRF_52840DK and M5core2 development boards to develop a motion-sensing universal remote control using IR to control various infrared devices would be:
+To meet the highest standard for Key Performance Indicators as per the given criteria, detailed KPIs for the project based on the NRF_52840DK and M5core2 development boards to develop a motion-sensing universal remote control using IR to control various infrared devices would be:
 
 ## 1. Gesture Input Recognition via Accelerometer:
 The M5core2's onboard accelerometer is to be calibrated and programmed to detect specific motion gestures. These gestures will serve as inputs to control various functions of infrared devices. Detailed metrics will be established to measure the accuracy and responsiveness of gesture recognition.
