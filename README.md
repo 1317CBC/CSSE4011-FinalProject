@@ -1,4 +1,4 @@
-# CSSE4011-FinalProject
+# CSSE4011-FinalProject Vulcan_Scarlet
 **Final Projct for CSSE4011 in UQ 2024 Semester 1**<br>
 This project encompasses the development of a motion-sensing universal remote controller based on the M5 Core2 board, augmented with an infrared (IR) receiver/transmitter module. This versatile controller is designed to command any type of appliance that receives standard IR signals.
 
