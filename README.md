@@ -51,6 +51,8 @@ The universal remote should be tested across multiple devices to confirm its abi
 ## 2. nrf52840dk_nrf52840 flowchart
 ![View nrf52840dk_nrf52840 Flowchart](/flowchart/nrf52840dk.png "nrf52840dk Flowchart")
 
+# BLE protocol diagram
+![BLE protocol between M5Core2 and NRF52840dk](/protocol/BLEprotocol.png "BLE protocol")
 
 # DIKW Pyramid Analysis of m5stack core2 and NRF 52840DK Universal Remote Control System
 
