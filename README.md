@@ -2,14 +2,14 @@
 
 # Team Members
 
-## Member DINGYI ZHANG
+## Member A: DINGYI ZHANG
 
 - **Student ID**: `45593156`
 - **Responsibilities**:
   - Handles Bluetooth communication between NRF52840 and M5Stack Core2.
   - Develops the infrared encoding on the NRF52840 module.
 
-## Member XIAOWEI ZHANG
+## Member B: XIAOWEI ZHANG
 
 - **Student ID**: `46169558`
 - **Responsibilities**:
