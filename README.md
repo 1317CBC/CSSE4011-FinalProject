@@ -57,3 +57,62 @@ In designing this universal remote control system, we ingeniously integrated the
 - Assigning complex data processing to M5Stack and focusing NRF52840 on infrared signal encoding and transmission, leveraging their respective strengths and simplifying system design.
 
 In summary, this universal remote control system well illustrates the various levels of the DIKW Pyramid. The lower layers of data collection and information processing are realized by the m5stack core2, the middle layer of gesture recognition and command mapping embodies the system's embedded knowledge, and the top layer of system design and integration crystallizes the developer's wisdom. These layers are organically combined to achieve a powerful and easy-to-use remote control solution.
+
+### M5Stack Core2
+The M5Stack Core2 integrates the following sensors and features for the universal infrared remote control system:
+
+1.        **MPU6886 Inertial Measurement Unit (IMU):**
+- The MPU6886 is a 6-axis motion tracking device that combines a 3-axis gyroscope and a 3-axis accelerometer.
+- It provides raw acceleration and angular velocity data for the X, Y, and Z axes.
+- The M5Stack Core2 reads the raw data from the MPU6886 sensor using the I2C communication protocol.
+
+2.        **Data Fusion:**
+- The raw data from the MPU6886 is processed using a data fusion algorithm, such as the kalman filter, to estimate the precise orientation of the M5Stack Core2.
+- The data fusion algorithm combines the accelerometer and gyroscope data to compensate for drift and provide stable orientation information.
+- The resulting orientation data is represented as quaternions or Euler angles (roll, pitch, yaw).
+
+3.        **Gesture Recognition:**
+- The M5Stack Core2 analyzes the fused orientation data to recognize different gestures performed by the user.
+- Each gesture is mapped to a specific command or action to be executed by the NRF52840DK.
+- For example, tilting the M5Stack Core2 to the right may correspond to the "volume up" command, while tilting it to the left may represent the "volume down" command.
+
+4.        **Touch Screen Interface:**
+- The M5Stack Core2 features a capacitive touch screen display.
+- The touch screen is used to provide a user-friendly interface for controlling the universal infrared remote control system.
+- Users can interact with the touch screen to select devices, navigate menus, and trigger specific commands.
+- The touch screen can display information such as the current device being controlled, available commands, and system status.
+
+5.        **Command Transmission:**
+- Once a gesture is recognized or a command is selected through the touch screen interface, the M5Stack Core2 sends the corresponding command to the NRF52840DK by.
+- The command is transmitted wirelessly using a suitable communication protocol, such as Ibeacon.
+- The M5Stack Core2 encodes the command into a specific format that can be interpreted by the NRF52840DK.
+
+### NRF52840DK
+The NRF52840DK receives commands from the M5Stack Core2 and performs the following tasks:
+
+1.        **Command Reception:**
+- The NRF52840DK listens for incoming commands from the M5Stack Core2 using the selected wireless communication protocol (Ibeacon).
+- It decodes the received command to determine the specific action to be performed.
+
+2.        **Infrared Encoding:**
+- Based on the received command, the NRF52840DK encodes the corresponding infrared signal.
+- It uses infrared protocols specific to the device being controlled, such as TV or Fans
+- The infrared encoding process involves generating the appropriate sequence of pulses and pauses that represent the command.
+
+3.        **Infrared Transmission:**
+- The NRF52840DK is equipped with an infrared LED or an external infrared transmitter module.
+- It transmits the encoded infrared signal through the infrared LED or transmitter module.
+- The infrared signal is emitted in the direction of the target device to be controlled.
+
+## System Flow
+The overall flow of the universal infrared remote control system can be summarized as follows:
+1.        The user interacts with the M5Stack Core2 through the touch screen interface or by performing gestures.
+2.        The M5Stack Core2 reads the raw data from the MPU6886 IMU sensor.
+3.        The raw data is processed using a data fusion algorithm to estimate the precise orientation of the M5Stack Core2.
+4.        Gesture recognition is performed based on the fused orientation data, or commands are selected through the touch screen interface.
+5.        The M5Stack Core2 sends the corresponding command to the NRF52840DK wirelessly.
+6.        The NRF52840DK receives the command and encodes the appropriate infrared signal based on the command.
+7.        The encoded infrared signal is transmitted through the infrared LED or transmitter module.
+8.        The target device receives the infrared signal and executes the corresponding action.
+
+This sensor integration architecture allows for a seamless and intuitive user experience, enabling control of various devices through gestures and touch interactions using the M5Stack Core2 and NRF52840DK universal infrared remote control system.
