@@ -78,7 +78,7 @@ In designing this universal remote control system, we ingeniously integrated the
 In summary, this universal remote control system well illustrates the various levels of the DIKW Pyramid. The lower layers of data collection and information processing are realized by the m5stack core2, the middle layer of gesture recognition and command mapping embodies the system's embedded knowledge, and the top layer of system design and integration crystallizes the developer's wisdom. These layers are organically combined to achieve a powerful and easy-to-use remote control solution.
 
 ## DIKW Diagram
-![DIKW Diagram](/DIKW/DIKW.png)
+![DIKW Diagram](/DIKW/DIKW1.png)
 
 # Full Sensor Integration Details for M5Stack Core2 and NRF52840DK Universal Infrared Remote Control System
 
