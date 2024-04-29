@@ -22,7 +22,7 @@ LOG_MODULE_REGISTER(app);
 #define RAD_TO_DEG 57.2957795131
 
 const double ACCEL_THRESHOLD = 1;  // accelerometer threshold
-const double GYRO_THRESHOLD = 50.0;  // gyroscope threshold
+const double GYRO_THRESHOLD = 3.0;  // gyroscope threshold
 
 static lv_obj_t *label;
 static lv_obj_t *roll_lable;
@@ -111,6 +111,12 @@ static void accinfo(void){
         } else if ((angle > -22.5 && angle <= 22.5) || (angle > 157.5 || angle < -157.5)) {
             sprintf(pitch_str, "Left    %lf\n", (double)angle);
         }
+    }
+
+    if (data.gz > GYRO_THRESHOLD) {
+        sprintf(pitch_str, "anti   %lf\n", (double)data.gz);
+    } else if (data.gz < -GYRO_THRESHOLD) {
+        sprintf(pitch_str, "count   %lf\n", (double)data.gz);
     }
 
     // calculateAngles(&data, &pitch, &roll);
