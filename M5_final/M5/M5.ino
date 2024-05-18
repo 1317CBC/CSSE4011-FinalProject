@@ -63,26 +63,6 @@ unsigned long prevTime = 0;
 float deltaTime = 0.0;
 char motionState[10];
 
-
-void setup()
-{
-    M5.begin();
-    Serial.begin(115200);
-    M5.IMU.Init();
-    calibrateIMU();
-    prevTime = millis();
-    M5.Lcd.setFont(&FreeMonoOblique24pt7b); // set the font
-
-    // initialize the display
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setTextColor(WHITE, BLACK);
-    M5.Lcd.setTextColor(0x00f0ff, WHITE);
-
-    // draw buttons
-    drawButton("FAN", 0, buttonY, WHITE);
-    drawButton("LED", 160, buttonY, WHITE);
-}
-
 /**
  * function to start the iBeacon
  * @param custom1 the first byte of the iBeacon command UUID
@@ -101,7 +81,8 @@ void startBeacon(uint8_t custom1, uint8_t custom2, uint8_t custom3, uint8_t cust
   
   // 生成 UUID 字符串
   char uuid[37];
-  sprintf(uuid, "C33E4011-9AC2-%02X%02X-%02X%02X-999999999999", custom1, custom2, custom3, custom4);
+  // sprintf(uuid, "C33E4011-9AC2-%02X%02X-%02X%02X-999999999999", custom1, custom2, custom3, custom4);
+  sprintf(uuid, "99999999-9999-%02X%02X-%02X%02X-C29A11403EC3", custom4, custom3, custom2, custom1);
   oBeacon.setProximityUUID(BLEUUID(uuid));
   
   oBeacon.setMajor(BEACON_MAJOR); // set Major value
@@ -196,6 +177,25 @@ void drawButton(String label, int x, int y, uint16_t color)
     M5.Lcd.print(label);                            // print the label
 }
 
+void setup()
+{
+    M5.begin();
+    Serial.begin(115200);
+    M5.IMU.Init();
+    calibrateIMU();
+    prevTime = millis();
+    M5.Lcd.setFont(&FreeMonoOblique24pt7b); // set the font
+
+    // initialize the display
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setTextColor(WHITE, BLACK);
+    M5.Lcd.setTextColor(0x00f0ff, WHITE);
+
+    // draw buttons
+    drawButton("FAN", 0, buttonY, WHITE);
+    drawButton("LED", 160, buttonY, WHITE);
+    startBeacon(custom1, custom2, custom3, custom4);
+}
 
 void loop() {
 
@@ -253,8 +253,8 @@ void loop() {
     filteredY = filteredY - ayOffset;
     filteredZ = filteredZ - azOffset;
 
-    // float pitchAcc = atan2(ax, sqrt(ay * ay + az * az)) * 180 / PI;
-    // float rollAcc = atan2(ay, sqrt(ax * ax + az * az)) * 180 / PI;
+    float pitchAcc = atan2(ax, sqrt(ay * ay + az * az)) * 180 / PI;
+    float rollAcc = atan2(ay, sqrt(ax * ax + az * az)) * 180 / PI;
     float pitch = kalmanPitch.updateEstimate(pitchAcc);
     float roll = kalmanRoll.updateEstimate(rollAcc);
     
@@ -271,9 +271,9 @@ void loop() {
             startBeacon(custom1, custom2, custom3, custom4);
         } else if (abs(roll) > 10) {
             if (roll > 0) {
-                custom2 = 0x03; // back
+                custom2 = 0x04; // back
             } else {
-                custom2 = 0x04; // front
+                custom2 = 0x03; // front
             }
             startBeacon(custom1, custom2, custom3, custom4);
         } else if (abs(filteredZ) > 10) {
@@ -291,6 +291,9 @@ void loop() {
             } else {
                 custom2 = 0x08; // count
             }
+            startBeacon(custom1, custom2, custom3, custom4);
+        } else {
+            custom2 = 0x00;
             startBeacon(custom1, custom2, custom3, custom4);
         }
     }
