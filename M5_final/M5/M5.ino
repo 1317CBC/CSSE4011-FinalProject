@@ -76,7 +76,7 @@ void startBeacon(uint8_t custom1, uint8_t custom2, uint8_t custom3, uint8_t cust
   BLEBeacon oBeacon = BLEBeacon();
   oBeacon.setManufacturerId(0x4C00); // set manufacturer ID
   
-  // 生成 UUID 字符串
+  // make UUID
   char uuid[37];
   // sprintf(uuid, "C33E4011-9AC2-%02X%02X-%02X%02X-999999999999", custom1, custom2, custom3, custom4);
   sprintf(uuid, "99999999-9999-%02X%02X-%02X%02X-C29A11403EC3", custom4, custom3, custom2, custom1);
