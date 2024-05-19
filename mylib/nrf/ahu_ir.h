@@ -14,12 +14,24 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/uart.h>
+#include <zephyr/devicetree.h>
+
+#include <zephyr/drivers/pwm.h>
 
 #include "./ahu_ble.h"
 
 // Define two devices
+#define PERIOD_USEC 26
+
 #define D1  0
 #define D2  1
+
+#define A1  1
+#define A2  2
+#define A3  3
+#define A4  4
+#define A5  7
+#define A6  8
 
 extern void nec_start(uint16_t act);
 extern void ir_pulse(uint64_t ms);

@@ -16,12 +16,21 @@
 #include <zephyr/bluetooth/uuid.h>
 #include <zephyr/bluetooth/gatt.h>
 
+#include <zephyr/logging/log.h>
+#include <zephyr/logging/log_ctrl.h>
+
 #define NAME_LEN 30
 
 #define IBEACON_PREFIX_LEN 10
 
+#define DBG 0
+#define ERR 1
+#define INF 2
+#define WRN 3
+
 extern struct k_msgq ble_uact_msgq;
 
+extern void logging_message(char *msg, int type);
 extern void ahu_ble_thread();
 extern void scan_cb(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
             struct net_buf_simple *ad);

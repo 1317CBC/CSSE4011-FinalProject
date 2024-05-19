@@ -10,4 +10,5 @@ FILE(GLOB app_sources src/*.c)
 include_directories(./../mylib/)
 
 target_sources(app PRIVATE ./../mylib/nrf/ahu_ble.c
+                           ./../mylib/nrf/ahu_ir.c
                            ./src/main.c)
