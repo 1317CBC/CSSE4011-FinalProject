@@ -54,9 +54,6 @@ float ax, ay, az, gx, gy, gz;
 float alpha = 0.1; // smoothing factor between 0 and 1
 float smoothedValue = 0;
 
-float prev_vx = 0, prev_vy = 0, prev_vz = 0;
-float prev_ax = 0, prev_ay = 0, prev_az = 0;
-float temp = 0.0F;
 float x = 0, y = 0, z = 0;
 float yaw = 0, pitch = 0, roll = 0;
 unsigned long prevTime = 0;
@@ -193,7 +190,7 @@ void setup()
 
     // draw buttons
     drawButton("FAN", 0, buttonY, WHITE);
-    drawButton("LED", 160, buttonY, WHITE);
+    drawButton("Aud", 160, buttonY, WHITE);
     startBeacon(custom1, custom2, custom3, custom4);
 }
 
@@ -213,15 +210,15 @@ void loop() {
                 M5.Lcd.setTextColor(0x00f0ff, BLUE);
                 drawButton("FAN", 0, buttonY, BLUE); // set button FAN to blue
                 M5.Lcd.setTextColor(0x00f0ff, WHITE);
-                drawButton("LED", 160, buttonY, WHITE); // reset button LED to white
+                drawButton("Aud", 160, buttonY, WHITE); // reset button Aud to white
                 delay(50);
                 startBeacon(custom1, custom2, custom3, custom4);
             }
             else if (pos.x >= 160 && pos.x < 320)
-            {                        // area of the LED button
+            {                        // area of the Aud button
                 custom1 = 0x02;
                 M5.Lcd.setTextColor(0x00f0ff, BLUE);
-                drawButton("LED", 160, buttonY, BLUE); // set button LED to blue
+                drawButton("Aud", 160, buttonY, BLUE); // set button Aud to blue
                 M5.Lcd.setTextColor(0x00f0ff, WHITE);
                 drawButton("FAN", 0, buttonY, WHITE); // reset button FAN to white
                 delay(50);
@@ -292,10 +289,10 @@ void loop() {
                 custom2 = 0x08; // count
             }
             startBeacon(custom1, custom2, custom3, custom4);
-        } else {
-            custom2 = 0x00;
-            startBeacon(custom1, custom2, custom3, custom4);
-        }
-    }
+        } 
+    } else {
+        custom2 = 0x00;
+        startBeacon(custom1, custom2, custom3, custom4);
+	}
     delay(10);
 }
